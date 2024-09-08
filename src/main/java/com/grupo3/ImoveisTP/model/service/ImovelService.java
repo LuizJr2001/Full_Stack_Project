@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -20,7 +19,7 @@ public class ImovelService {
 
     private final List<Imovel> imoveis = new ArrayList<>();
 
-    //private final ImovelRepository imovelRepository;
+    private final ImovelRepository imovelRepository;
 
     public List<Imovel> listarTodos() {
 
@@ -28,7 +27,7 @@ public class ImovelService {
             throw new ImovelNotFoundException();
         }
         else
-            return imoveis;
+            return imovelRepository.findAll();
 
     }
 
