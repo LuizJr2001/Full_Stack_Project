@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS Imovel (
+    id INT NOT NULL,
+    tipoImovel ENUM('CASA', 'APARTAMENTO') NOT NULL,
+    endereco VARCHAR(255) NOT NULL,
+    valorAluguel DECIMAL(10, 2) NOT NULL
+);
